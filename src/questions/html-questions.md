@@ -24,11 +24,29 @@ permalink: /questions/html-questions/index.html
         -   ```const article = document.querySelector('#electric-cars'); article.dataset.columns; ```
     -  CSS access: ```content: attr(data-parent);``` or attribute selectors ```article[data-columns='3']```
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+    - more semantic text markup
+      new form elements
+      vedio and audio
+      new javascript API
+      canvas and SVG
+      new communication API
+      geolocation API
+      web worker API
+      new data storage
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+    - The Web Storage API provides mechanisms by which browsers can store key/value pairs (store Info), in a much more intuitive fashion than using cookies.
+    - ![cI5kT](https://user-images.githubusercontent.com/35388473/136591575-2d1a3226-4627-4830-b7f2-ee359a7c8ae9.jpg)
+
 * Describe the difference between `<script>`, `<script async>` and `<script defer>`.
+    - client side script, async allows execute script while page continues the parsing, defer tells the browser to only execute the script file once the HTML document has been fully parsed
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 * What is progressive rendering?
 * Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
 * Have you used different HTML templating languages before?
 * What is the difference between `canvas` and `svg`?
 * What are empty elements in HTML ?
+* 自我补充：DOM and HTML
+    - DOM is a model of a document with an associated API for manipulating it. HTML is a markup language that lets you represent a certain kind of DOM in text.
+    -  The Document Object Model (DOM) is a language-independent model made up of objects representing the structure of a document. HTML is one language for writing such documents. Other kinds of DOMs can be expressed in other markup languages, for example RSS and Atom can be converted to a DOM and manipulated with the same API as an HTML or XHTML document
+    -  The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. the DOM specifies that the querySelectorAll method ```const paragraphs = document.querySelectorAll("p");```
+    -  The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
