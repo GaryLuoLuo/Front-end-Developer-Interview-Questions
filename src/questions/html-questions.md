@@ -40,8 +40,20 @@ permalink: /questions/html-questions/index.html
 * Describe the difference between `<script>`, `<script async>` and `<script defer>`.
     - client side script, async allows execute script while page continues the parsing, defer tells the browser to only execute the script file once the HTML document has been fully parsed
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+    - The main reason as to why JS files are linked at the bottom of the body is because whenever a browser encounters any JS, it parses it and executes that on the spot. Hence if it was to be added at the top, it would make the page rendering slow and thus it would take more time for page load. Moreover since the DOM won't be rendered fully, JS won't be able to manipulate the elements.
+    - On the contrary, CSS files are linked in the head because they get applied regardless of DOM already rendered or not. If link the CSS at the end, the CSS load would take considerable amount of time, which means that the webpage shows just the HTML meanwhile. This might make the user close the website without waiting for it to load fully.
+    - if you use Jquery, that won't be an issue since it would execute only after the document is ready
 * What is progressive rendering?
+    - Client Side Rendering: server sends a simple HTML without any content in the body and script tags in the head. Once the scripts are loaded, the browser parses them and makes API requests and loads all the content asynchronously.
+    - Server Side Rendering: the whole HTML is rendered on the server and sent to client.
+    - PSSR bridges the benefits of both CSR and SSR: https://medium.com/the-thinkmill/progressive-rendering-the-key-to-faster-web-ebfbbece41a4
+    - PSSR: once you render the critical content on the server, you start streaming it to the client without waiting for non-critical content.
 * Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
+    - https://imagekit.io/responsive-images/#chapter-4---srcset
+    - responsive images: load the right image based on device resolution and so on.
+    - used srcset (source set) to provide the browser with three different size images. The browser picked the right option based on the actual viewport size of the device.
+    - density descriptor or width descriptor - This lets the browser pick the best image
+    - actual px = viewport width * DPR (Device Pixel Ratio)
 * Have you used different HTML templating languages before?
 * What is the difference between `canvas` and `svg`?
 * What are empty elements in HTML ?
