@@ -55,7 +55,7 @@ https://frontendinterviewhandbook.com/html-questions/#table-of-contents
     - responsive images: load the right image based on device resolution and so on.
     - used srcset (source set) to provide the browser with three different size images. The browser picked the right option based on the actual viewport size of the device.
     - density descriptor or width descriptor - This lets the browser pick the best image
-    - img width = viewport(screen) width * DPR (Device Pixel Ratio)   
+    - img width = viewport(screen, physical) width * DPR (Device Pixel Ratio) == device resolution
 * Have you used different HTML templating languages before?
     - React (JSX)
     - Embedded JavaScript(EJS), Handlebars, Pug, Mustache
