@@ -4,6 +4,7 @@ layout: layouts/page.njk
 permalink: /questions/html-questions/index.html
 ---
 
+https://frontendinterviewhandbook.com/html-questions/#table-of-contents
 * What does a `doctype` do?
     - All HTML documents must start with a <!DOCTYPE html> declaration. Its sole purpose is to prevent a browser from switching into so-called “quirks mode” when rendering a document, i.e. not following the relevant spec  
     -   https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
@@ -48,15 +49,23 @@ permalink: /questions/html-questions/index.html
     - Server Side Rendering: the whole HTML is rendered on the server and sent to client.
     - PSSR bridges the benefits of both CSR and SSR: https://medium.com/the-thinkmill/progressive-rendering-the-key-to-faster-web-ebfbbece41a4
     - PSSR: once you render the critical content on the server, you start streaming it to the client without waiting for non-critical content.
+    - techniques: Lazy loading of images, Prioritizing visible content
 * Why you would use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
     - https://imagekit.io/responsive-images/#chapter-4---srcset
     - responsive images: load the right image based on device resolution and so on.
     - used srcset (source set) to provide the browser with three different size images. The browser picked the right option based on the actual viewport size of the device.
     - density descriptor or width descriptor - This lets the browser pick the best image
-    - actual px = viewport width * DPR (Device Pixel Ratio)
+    - img width = viewport(screen) width * DPR (Device Pixel Ratio)   
 * Have you used different HTML templating languages before?
+    - React (JSX)
+    - Embedded JavaScript(EJS), Handlebars, Pug, Mustache
 * What is the difference between `canvas` and `svg`?
+    - Vector Based. The Scalable Vector Graphics (SVG), define two-dimensional vector-based graphics. SVG has better scalability. So it can be printed with high quality at any resolution.
+    - Pixel Based. The element is only a container for graphics. draw graphics on the fly, via scripting (usually JavaScript). Canvas has poor scalability. Hence it is not suitable for printing on higher resolution.
 * What are empty elements in HTML ?
+    - An empty element is an element from HTML, SVG, or MathML that cannot have any child nodes (i.e., nested elements or text nodes).
+    - The empty elements are used to embed images, lists, breaks, horizontal lines, hyperlinks, for input, meta-data, area, etc.
+    - no closing tag e.g. `</input>`
 * 自我补充：DOM and HTML
     - DOM is a model of a document with an associated API for manipulating it. HTML is a markup language that lets you represent a certain kind of DOM in text.
     -  The Document Object Model (DOM) is a language-independent model made up of objects representing the structure of a document. HTML is one language for writing such documents. Other kinds of DOMs can be expressed in other markup languages, for example RSS and Atom can be converted to a DOM and manipulated with the same API as an HTML or XHTML document
