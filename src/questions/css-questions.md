@@ -5,8 +5,17 @@ permalink: /questions/css-questions/index.html
 ---
 
 * What is CSS selector specificity and how does it work?
+    - browser decide which CSS property values to be applied to an element, increase:
+    - Type selectors (e.g., h1) and pseudo-elements (e.g., ::before).
+    - Class selectors (e.g., .example), attributes selectors (e.g., [type="radio"]) and pseudo-classes (e.g., :hover).
+    - ID selectors (e.g., #example).
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+    - Resetting: Removing all styling from every element - margins, padding, etc. All elements will have the same font-size, same line-height and no spacing. Eric Meyer's Reset is the most common approach: http://meyerweb.com/eric/tools/css/reset/
+    - Normalizing: Making elements render consistently across browsers. So all h1s will have the same size across browsers, for instance. Nicolas Gallagher's normalize.css is generally used for normalizing: http://necolas.github.io/normalize.css/
+    - ?I personally prefer normalizing a bajillion times over resetting. There's no point in resetting everything only to style it again.
 * Describe Floats and how they work.
+    - The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. 
+    - float: none;  float: left;  float: right;
 * Describe z-index and how stacking context is formed.
 * Describe BFC (Block Formatting Context) and how it works.
 * What are the various clearing techniques and which is appropriate for what context?
