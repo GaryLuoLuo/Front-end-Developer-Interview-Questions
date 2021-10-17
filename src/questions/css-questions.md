@@ -21,7 +21,12 @@ permalink: /questions/css-questions/index.html
     - stacking context hierarchy: root stacking context, stacking context level 1, stacking context level 2, ...
     - Note: The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context. So, it's important to tell if this element is creating a stacking context or not using the scenario lists.
     - Without z-indexes, elements are stacked in order of occurrence (Stacking). the z-index values of its child stacking contexts only have meaning in this parent
-* Describe BFC (Block Formatting Context) and how it works.
+* Describe BFC (Block Formatting Context) and how it works. https://zhuanlan.zhihu.com/p/80855885
+    - 为盒子准备的一套渲染规则。
+    - Floats, overflows establish new block formatting contexts for their contents.
+    - 一个BFC包含创建该上下文元素的所有子元素，但不包括创建了新BFC的子元素的内部元素。 (A block formatting context contains everything inside of the element creating it that is not also inside a descendant element that creates a new block formatting context.) 一个元素不能同时存在两个BFC中。
+    - BFC features: boxes inside one BFC margin collapse, so to not collapse, create new BFC for one box（Margin collapsing）. 形成了BFC的区域不会与float box重叠（Exclude external floats）. 计算BFC的高度时，浮动子元素也参与计算（Contain internal floats）
+    - (green盒子因为浮动原因，脱离normal flow, 如果想要让parent包裹住green，最简单的办法就是给parent盒子构建BFC。因为当我们计算BFC的高度时，浮动子元素也参与计算。这样一来我们就能让parent grey盒子的高度被green盒子撑开了。如何让sibling盒子接受”绿色盒子的存在？我们将红色盒子也构建出BFC，根据特性，形成了BFC的区域不会与float box重叠。于是这里红色盒子成功“接受”了绿色盒子。)
 * What are the various clearing techniques and which is appropriate for what context?
 * How would you approach fixing browser-specific styling issues?
 * How do you serve your pages for feature-constrained browsers?
