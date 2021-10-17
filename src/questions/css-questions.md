@@ -17,6 +17,10 @@ permalink: /questions/css-questions/index.html
     - The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. 
     - float: none;  float: left;  float: right;
 * Describe z-index and how stacking context is formed.
+    - z-index: the rendering order of certain elements. why? because these elements have special properties which cause them to form a stacking context. a list of scenarios...
+    - stacking context hierarchy: root stacking context, stacking context level 1, stacking context level 2, ...
+    - Note: The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context. So, it's important to tell if this element is creating a stacking context or not using the scenario lists.
+    - Without z-indexes, elements are stacked in order of occurrence (Stacking). the z-index values of its child stacking contexts only have meaning in this parent
 * Describe BFC (Block Formatting Context) and how it works.
 * What are the various clearing techniques and which is appropriate for what context?
 * How would you approach fixing browser-specific styling issues?
