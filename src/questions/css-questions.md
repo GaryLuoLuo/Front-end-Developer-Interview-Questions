@@ -80,4 +80,5 @@ permalink: /questions/css-questions/index.html
     - normal flow
     - display: block, inline, flex (1D), grid (2D)
     - float: left, right, none
-    - position: static, relative, 
+    - position: static, relative, absolute, fixed, sticky
+    - (Table layout, Multiple-column layout)
