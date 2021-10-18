@@ -50,8 +50,10 @@ permalink: /questions/css-questions/index.html
     - Absolutely positioning content off-screen. left:-10000px;
     - CSS clip.
 * Have you ever used a grid system, and if so, what do you prefer?
-    - flex is the recommended approach for building grid systems and has
+    - float -> flex -> grid
 * Have you used or implemented media queries or mobile specific layouts/CSS?
+    -  key component of responsive design, e.g. a media query can shrink the font size on small devices
+    -  TBD
 * Are you familiar with styling SVG?
 * Can you give an example of an `@media` property other than `screen`?
 * What are some of the "gotchas" for writing efficient CSS?
