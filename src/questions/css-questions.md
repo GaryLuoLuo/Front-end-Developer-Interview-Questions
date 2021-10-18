@@ -27,12 +27,30 @@ permalink: /questions/css-questions/index.html
     - 一个BFC包含创建该上下文元素的所有子元素，但不包括创建了新BFC的子元素的内部元素。 (A block formatting context contains everything inside of the element creating it that is not also inside a descendant element that creates a new block formatting context.) 一个元素不能同时存在两个BFC中。
     - BFC features: boxes inside one BFC margin collapse, so to not collapse, create new BFC for one box（Margin collapsing）. 形成了BFC的区域不会与float box重叠（Exclude external floats）. 计算BFC的高度时，浮动子元素也参与计算（Contain internal floats）
     - (green盒子因为浮动原因，脱离normal flow, 如果想要让parent包裹住green，最简单的办法就是给parent盒子构建BFC。因为当我们计算BFC的高度时，浮动子元素也参与计算。这样一来我们就能让parent grey盒子的高度被green盒子撑开了。如何让sibling盒子接受”绿色盒子的存在？我们将红色盒子也构建出BFC，根据特性，形成了BFC的区域不会与float box重叠。于是这里红色盒子成功“接受”了绿色盒子。)
-* What are the various clearing techniques and which is appropriate for what context?
+* What are the various clearing techniques and which is appropriate for what context? - use `clear` css property
+    - Empty div method - `<div style="clear:both;"></div>`. 
+    - Clearfix method - Refer to the .clearfix class above.
+    - overflow: auto or overflow: hidden method - Parent will establish a new block formatting context and expand to contains its floated children.
+    - In large projects, I would write a utility .clearfix class and use them in places where I need it. overflow: hidden might clip children if the children is taller than the parent and is not very ideal.
 * How would you approach fixing browser-specific styling issues?
-* How do you serve your pages for feature-constrained browsers?
-  * What techniques/processes do you use?
-* What are the different ways to visually hide content (and make it available only for screen readers)?
+    - Always build responsive layouts.
+    - check features of HTML5 and CSS3, and mdn and see browser support
+    - when develop, test across browsers
+    - Google Analytics, what browers my audience using
+    - Use Reset CSS or Normalize.css, or bootstrap
+* How do you serve your pages for feature-constrained browsers?  What techniques/processes do you use?
+    - Graceful degradation — The practice of building an application for modern browsers while ensuring it remains functional in older browsers.
+    - Progressive enhancement — The practice of building an application for a base level of user experience, but adding functional enhancements when a browser supports it.
+    - Use caniuse.com to check for feature support.
+* What are the different ways to visually hide content (and make it available only for screen readers)? https://webaim.org/techniques/css/invisiblecontent/
+    - display:none or visibility: hidden. These styles will hide content from all users. ...
+    - HTML hidden attribute
+    - width:0px , height:0px or other 0 pixel sizing techniques (not recommended) ...
+    - text-indent: -10000px; ...
+    - Absolutely positioning content off-screen. left:-10000px;
+    - CSS clip.
 * Have you ever used a grid system, and if so, what do you prefer?
+    - flex is the recommended approach for building grid systems and has
 * Have you used or implemented media queries or mobile specific layouts/CSS?
 * Are you familiar with styling SVG?
 * Can you give an example of an `@media` property other than `screen`?
@@ -58,3 +76,8 @@ permalink: /questions/css-questions/index.html
 * Can you give an example of a pseudo class? Can you provide an example use case for a pseudo class? 
 * What is the difference between a block level element and an inline element. Can you provide examples of each type of element?
 * What is the difference between CSS Grid and Flexbox? When would you use one over the other?
+* CSS Layout 
+    - normal flow
+    - display: block, inline, flex (1D), grid (2D)
+    - float: left, right, none
+    - position: static, relative, 
