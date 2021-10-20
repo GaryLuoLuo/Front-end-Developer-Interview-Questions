@@ -110,9 +110,24 @@ button:hover {
     - border-box: width 10px -> actual width === 10px
 * What is the CSS `display` property and can you give a few examples of its use?
 * What's the difference between inline and inline-block?
+    - equivalent to `inline flow-root`
+    - it's inline, but could resize inline elements by height and width.
 * What's the difference between the "nth-of-type()" and "nth-child()" selectors?
+```
+<div>
+    <h1>Hello</h1>
+
+    <p>Paragraph</p>
+
+    <p>Target</p>
+</div>
+```
+    - Then `p:nth-child(2)` will select the second child which is also a p (namely, the p with "Paragraph").
+    - `p:nth-of-type` will select the second matched p element, (namely, our Target p).
 * What's the difference between a relative, fixed, absolute and statically positioned element?
+    - (static: positoned by normal flow)
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+    - Bootstrap, Semantic UI.
 * Have you used CSS Grid?
 * Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
     - making a website responsive means some elements will adapting its size according to the device screen size, through css media queries.
@@ -127,9 +142,30 @@ Each media feature expression must be surrounded by parentheses.
 ```
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
 * Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
+    - `transform: translate(10px);` `transform: rotate(0.5turn);`
+    -  transition has faster paint 
 * How is clearfix css property useful?
+    - `clear: both;` clear the float of the above element
+    - however, flexbox is more encouraged than float
+```
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+<div class="clearfix">
+    <div style="float: left;" class="clearfix">Sidebar</div>
+    <!-- No Clearing div! -->
+</div>
+```
+
 * Can you explain the difference between px, em and rem as they relate to font sizing?
+    - Pixel ( px ) 
+    - em: computed font-size of that element’s parent.
+    - rem: relative to the root html element
+    - Element ( em ) and Root element ( rem )  are responsive units interpreted into equivalent px unit by the browser.
 * Can you give an example of a pseudo class? Can you provide an example use case for a pseudo class? 
+    - :visited, :hover, :focus, :nth-child, :nth-of-type, 🐳
 * What is the difference between a block level element and an inline element. Can you provide examples of each type of element?
 * What is the difference between CSS Grid and Flexbox? When would you use one over the other?
 * CSS Layout 
