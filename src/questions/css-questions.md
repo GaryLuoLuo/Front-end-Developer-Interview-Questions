@@ -53,17 +53,61 @@ permalink: /questions/css-questions/index.html
     - float -> flex -> grid
 * Have you used or implemented media queries or mobile specific layouts/CSS?
     -  key component of responsive design, e.g. a media query can shrink the font size on small devices
-    -  TBD
-* Are you familiar with styling SVG?
+    -  in css, `@media print {  body { font-size: 10pt; } }`, 
+* Are you familiar with styling SVG? 
 * Can you give an example of an `@media` property other than `screen`?
+    - all - for all media type devices
+    - print - for printers
+    - speech - for screenreaders that "reads" the page out loud
+    - screen - for computer screens, tablets, smart-phones etc.
+```
+@media print {
+  body {
+    color: black;
+  }
+}
+```
 * What are some of the "gotchas" for writing efficient CSS?
 * What are the advantages/disadvantages of using CSS preprocessors?
   * Describe what you like and dislike about the CSS preprocessors you have used.
+      - CSS preprocessor is a program that lets you generate CSS from the preprocessor's own unique syntax. Requires tools for preprocessing
+      - Sass, LESS, Stylus, PostCSS
 * How would you implement a web design comp that uses non-standard fonts?
+    - Specifying a custom font from an url
+```
+@font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+    }
+
+    body { font-family: "Bitstream Vera Serif Bold", serif }
+```
 * Explain how a browser determines what elements match a CSS selector.
+    - browsers match from the right to left
 * Describe pseudo-elements and discuss what they are used for.
+    - ele:: style a specific part of the selected element.
+    - class: style a special state of the selected element
+```
+/* The first line of every <p> element. */
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+/* Add a heart before links */
+a::before {
+  content: "♥";
+}
+// pseudo class
+/* Any button over which the user's pointer is hovering */
+button:hover {
+  color: blue;
+}
+```
 * Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+    - rectangular boxes that are generated for elements in the document tree
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+    - content-box: width 10px -> actual width === 10px+padding+border
+    - border-box: width 10px -> actual width === 10px
 * What is the CSS `display` property and can you give a few examples of its use?
 * What's the difference between inline and inline-block?
 * What's the difference between the "nth-of-type()" and "nth-child()" selectors?
@@ -71,6 +115,16 @@ permalink: /questions/css-questions/index.html
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 * Have you used CSS Grid?
 * Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
+    - making a website responsive means some elements will adapting its size according to the device screen size, through css media queries.
+    - it agrees we should default and define all the styles for mobile devices?
+```
+Each media feature expression must be surrounded by parentheses.
+@media (min-width: 601px) {
+  .my-class {
+    font-size: 24px;
+  }
+}
+```
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
 * Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
 * How is clearfix css property useful?
