@@ -167,7 +167,9 @@ Each media feature expression must be surrounded by parentheses.
 * Can you give an example of a pseudo class? Can you provide an example use case for a pseudo class? 
     - :visited, :hover, :focus, :nth-child, :nth-of-type, 🐳
 * What is the difference between a block level element and an inline element. Can you provide examples of each type of element?
+    - Normal Flow, or Flow Layout, is the way that Block and Inline elements are displayed on a page. Once something is taken out of flow it works independently.
 * What is the difference between CSS Grid and Flexbox? When would you use one over the other?
+    - CSS Grid and Flexbox are layout models. 2D layout vs. 1D layout
 * CSS Layout 
     - normal flow
     - display: block, inline, flex (1D), grid (2D)
