@@ -105,6 +105,9 @@ button:hover {
 ```
 * Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
     - rectangular boxes that are generated for elements in the document tree
+    - Making up a block box in CSS we have the: Content Box, Padding Box, Border Box, Margin Box
+    - `box-sizing: border-box;`
+    - compute the width/height, round all of the values separately to the nearest pixel, render the result
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
     - content-box: width 10px -> actual width === 10px+padding+border
     - border-box: width 10px -> actual width === 10px
