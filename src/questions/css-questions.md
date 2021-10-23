@@ -112,7 +112,7 @@ button:hover {
 * What's the difference between inline and inline-block?
     - equivalent to `inline flow-root`
     - it's inline, but could resize inline elements by height and width.
-* What's the difference between the "nth-of-type()" and "nth-child()" selectors?
+* What's the difference between the "nth-of-type()" and "nth-child()" selectors? - look for it's siblings
 ```
 <div>
     <h1>Hello</h1>
