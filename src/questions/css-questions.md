@@ -129,6 +129,20 @@ button:hover {
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
     - Bootstrap, Semantic UI.
 * Have you used CSS Grid?
+```
+display: grid;
+grid-template-rows: 70px 40px 1fr 50px;
+grid-template-columns: 3fr 1fr;
+grid-template-areas: 
+  "page-header page-header"
+  "menu menu"
+  "content sidebar"
+  "page-footer page-footer"
+==
+#xxx{
+  grid-area: page-header
+}
+```
 * Can you explain the difference between coding a web site to be responsive versus using a mobile-first strategy?
     - making a website responsive means some elements will adapting its size according to the device screen size, through css media queries.
     - it agrees we should default and define all the styles for mobile devices?
@@ -161,7 +175,7 @@ Each media feature expression must be surrounded by parentheses.
 
 * Can you explain the difference between px, em and rem as they relate to font sizing?
     - Pixel ( px ) 
-    - em: computed font-size of that element’s parent.
+    - em: 3 rem means 3 times of the size of default size of the parent
     - rem: relative to the root html element
     - Element ( em ) and Root element ( rem )  are responsive units interpreted into equivalent px unit by the browser.
 * Can you give an example of a pseudo class? Can you provide an example use case for a pseudo class? 
