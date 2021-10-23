@@ -6,7 +6,8 @@ permalink: /questions/html-questions/index.html
 
 https://frontendinterviewhandbook.com/html-questions/#table-of-contents
 * What does a `doctype` do?
-    - All HTML documents must start with a <!DOCTYPE html> declaration. Its sole purpose is to prevent a browser from switching into so-called “quirks mode” when rendering a document, i.e. not following the relevant spec  
+    - All HTML documents must start with a <!DOCTYPE html> declaration. Its sole purpose is to prevent a browser from switching into so-called “quirks mode” when rendering a document, i.e. not following the relevant html5 and css3 spec. 
+    - history about Netscape and IE
     -   https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
     -   https://developer.mozilla.org/en-US/docs/Glossary/Doctype
     -   document.doctype
