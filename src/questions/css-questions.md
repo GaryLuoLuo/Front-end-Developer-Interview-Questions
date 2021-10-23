@@ -54,7 +54,7 @@ permalink: /questions/css-questions/index.html
 * Have you used or implemented media queries or mobile specific layouts/CSS?
     -  key component of responsive design, e.g. a media query can shrink the font size on small devices
     -  in css, `@media print {  body { font-size: 10pt; } }`, 
-* Are you familiar with styling SVG? 
+* Are you familiar with styling SVG? Scalable Vector Graphics
 * Can you give an example of an `@media` property other than `screen`?
     - all - for all media type devices
     - print - for printers
