@@ -22,10 +22,12 @@ permalink: /questions/css-questions/index.html
     - Note: The hierarchy of stacking contexts is a subset of the hierarchy of HTML elements because only certain elements create stacking contexts. We can say that elements that do not create their own stacking contexts are assimilated by the parent stacking context. So, it's important to tell if this element is creating a stacking context or not using the scenario lists.
     - Without z-indexes, elements are stacked in order of occurrence (Stacking). the z-index values of its child stacking contexts only have meaning in this parent
 * Describe BFC (Block Formatting Context) and how it works. https://zhuanlan.zhihu.com/p/80855885
-    - 为盒子准备的一套渲染规则。
+    - 为盒子准备的一套渲染规则。solve margin collapse, float box include/exclude
     - Floats, overflows establish new block formatting contexts for their contents.
     - 一个BFC包含创建该上下文元素的所有子元素，但不包括创建了新BFC的子元素的内部元素。 (A block formatting context contains everything inside of the element creating it that is not also inside a descendant element that creates a new block formatting context.) 一个元素不能同时存在两个BFC中。
     - BFC features: boxes inside one BFC margin collapse, so to not collapse, create new BFC for one box（Margin collapsing）. 形成了BFC的区域不会与float box重叠（Exclude external floats）. 计算BFC的高度时，浮动子元素也参与计算（Contain internal floats）
+    - NOTE: if one is not BFC, out of normal flow, just overlap, no include or exclude float box
+    - NOTE: if all are BFC, parent-child: include float box || sibling: exclude float box
     - (green盒子因为浮动原因，脱离normal flow, 如果想要让parent包裹住green，最简单的办法就是给parent盒子构建BFC。因为当我们计算BFC的高度时，浮动子元素也参与计算。这样一来我们就能让parent grey盒子的高度被green盒子撑开了。如何让sibling盒子接受”绿色盒子的存在？我们将红色盒子也构建出BFC，根据特性，形成了BFC的区域不会与float box重叠。于是这里红色盒子成功“接受”了绿色盒子。)
 * What are the various clearing techniques and which is appropriate for what context? - use `clear` css property
     - Empty div method - `<div style="clear:both;"></div>`. 
@@ -47,6 +49,7 @@ permalink: /questions/css-questions/index.html
     - HTML hidden attribute
     - width:0px , height:0px or other 0 pixel sizing techniques (not recommended) ...
     - text-indent: -10000px; ...
+    - *** below are recommended ways ***
     - Absolutely positioning content off-screen. left:-10000px;
     - CSS clip.
 * Have you ever used a grid system, and if so, what do you prefer?
