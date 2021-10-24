@@ -180,5 +180,6 @@ class Teacher extends Person {
 // use setter method:  snape.subject="new value"
 ```
 ![prototypes](https://user-images.githubusercontent.com/35388473/138607259-79060cc5-57cb-4973-a29a-d1f453d346c0.jpg)  
-当我们访问对象的属性或方法时，浏览器首先会查找对象本身是否拥有这些属性和方法。如果没有，浏览器会去查找对象的原型对象上有没有这些属性和方法。如果还是没有，就查找原型对象的原型对象。这就是所谓的原型链。  
+当我们访问对象的属性或方法时，浏览器首先会查找对象本身是否拥有这些属性和方法。如果没有，浏览器会去查找对象的原型对象上有没有这些属性和方法。如果还是没有，就查找原型对象的原型对象。这就是所谓的原型链。
+注意，如果不写new，这就是一个普通函数，它返回undefined。但是，如果写了new，它就变成了一个构造函数，它绑定的this指向新创建的对象，并默认返回this，也就是说，不需要在最后写return this;。  
 https://www.liaoxuefeng.com/wiki/1022910821149312/1023022126220448
