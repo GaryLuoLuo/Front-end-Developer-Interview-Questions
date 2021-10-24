@@ -179,5 +179,6 @@ class Teacher extends Person {
 // use getter method:  snape.subject 
 // use setter method:  snape.subject="new value"
 ```
-![prototypes](https://user-images.githubusercontent.com/35388473/138607259-79060cc5-57cb-4973-a29a-d1f453d346c0.jpg)
-当我们访问对象的属性或方法时，浏览器首先会查找对象本身是否拥有这些属性和方法。如果没有，浏览器会去查找对象的原型对象上有没有这些属性和方法。如果还是没有，就查找原型对象的原型对象。这就是所谓的原型链。
+![prototypes](https://user-images.githubusercontent.com/35388473/138607259-79060cc5-57cb-4973-a29a-d1f453d346c0.jpg)  
+当我们访问对象的属性或方法时，浏览器首先会查找对象本身是否拥有这些属性和方法。如果没有，浏览器会去查找对象的原型对象上有没有这些属性和方法。如果还是没有，就查找原型对象的原型对象。这就是所谓的原型链。  
+https://www.liaoxuefeng.com/wiki/1022910821149312/1023022126220448
