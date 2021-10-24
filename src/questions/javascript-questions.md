@@ -178,3 +178,4 @@ class Teacher extends Person {
 // use getter method:  snape.subject 
 // use setter method:  snape.subject="new value"
 ```
+![prototypes](https://user-images.githubusercontent.com/35388473/138607259-79060cc5-57cb-4973-a29a-d1f453d346c0.jpg)
