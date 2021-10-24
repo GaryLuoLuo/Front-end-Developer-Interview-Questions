@@ -64,3 +64,62 @@ console.log("hello" || "world")
 console.log("foo" && "bar")
 ```
 * Write an immediately invoked function expression (IIFE)
+
+---
+* 构造函数 constructor functions - 大写, e.g. Object String Array Person   
+declaring an obj literal `const a = {}` and using a constructor fn `class/fn + new` - both generate obj    
+other ways to create obj:  
+-  `let person1 = new Object({obj literal});`   
+-  `let person2 = Object.create(person1);`  creating only a few instances of an object.   using an existing object as the prototype of the newly created object.   
+```
+function Person(name) {
+  this.name = name;
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  };
+}
+let person1 = new Person('Bob');
+person1.name
+person1.greeting()
+```
+* 原型 Prototypes are the mechanism by which JavaScript objects inherit features from one another.  
+The prototype property's value is an object, which is basically **a bucket for storing properties and methods that we want to be inherited by objects further down the prototype chain**.  So Object.prototype.toString(), Object.prototype.valueOf(), etc., are available to any object types that inherit from Object.prototype, including new object instances created from the Person() constructor.  Object.is(), Object.keys() are not inheritable.   
+
+* 对象的__proto__属性和该对象的构造函数的prototype属性是同一个对象，既该实例对象的原型对象。  
+```
+let A = function () {};
+
+let a = new A();
+let b = new String('b');
+// 都是该实例对象的原型对象。
+console.log(a.__proto__ === A.prototype); // true
+console.log(b.__proto__ === String.prototype); // true
+```
+构造函数的 prototype instead is a property containing an object on which you define members that you want to be inherited.  
+
+* The constructor property  
+  - Every constructor function has a prototype property whose value is an object containing a constructor property. This constructor property points to the original constructor function.    
+  - WARNING: `let B = function () {}` !== `let C = () => {}`, B.prototype ✔️ C.prototype 😫 not exist
+  - B.prototype.constructor === B
+  - object definitions pattern - define the properties inside the constructor, and the methods on the prototype.
+```
+// Constructor with property definitions
+
+function Test(a, b, c, d) {
+  // property definitions
+}
+
+// First method definition
+
+Test.prototype.x = function() { ... };
+
+// Second method definition
+
+Test.prototype.y = function() { ... };
+
+// etc.
+```
+
+* Inheritance  
+    - update inheritance chain dynamically, `Person.prototype.farewell = function() {}`
+    - performing `delete person1.__proto__.farewell` or `delete Person.prototype.farewell` would remove the `farewell()` method from all Person instances.
