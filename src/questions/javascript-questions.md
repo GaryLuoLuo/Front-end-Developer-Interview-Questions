@@ -5,6 +5,24 @@ permalink: /questions/javascript-questions/index.html
 ---
 
 * Explain event delegation.
+    - https://dmitripavlutin.com/javascript-event-delegation/
+    - Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+```
+<div id="buttons"> <!-- Step 1 -->
+  <button class="buttonClass">Click me</button>
+  <button class="buttonClass">Click me</button>
+  <!-- buttons... -->
+  <button class="buttonClass">Click me</button>
+</div>
+<script>
+  document.getElementById('buttons')
+    .addEventListener('click', event => { // Step 2
+      if (event.target.className === 'buttonClass') { // Step 3
+        console.log('Click!');
+      }
+    });
+</script>
+```
 * Explain how `this` works in JavaScript.
   * Can you give an example of one of the ways that working with `this` has changed in ES6?
 * Explain how prototypal inheritance works.
