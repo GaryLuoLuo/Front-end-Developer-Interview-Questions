@@ -120,6 +120,61 @@ Test.prototype.y = function() { ... };
 // etc.
 ```
 
-* Inheritance  
+* prototypal inheritance  
+    - 4 types of Obj property/method:  
+1. property defined in Constructor and given to obj instance. `this.x=x`  
+2. static properties/methods - defined directly on the constructor. `Math.max() or Object.keys()`  
+3. inheritable, defined on Constructor's prototype property. `myConstructor.prototype.x()`  
+4. object instance?  
     - update inheritance chain dynamically, `Person.prototype.farewell = function() {}`
     - performing `delete person1.__proto__.farewell` or `delete Person.prototype.farewell` would remove the `farewell()` method from all Person instances.
+```
+// call 借花献佛 - Teacher 强迫 Person 的 this 指向自己
+function Person(first, last, age) {
+  this.age=age;
+  ...
+}
+function Teacher(first, last, age, subject) {
+  Person.call(this, first, last, age);
+
+  this.subject = subject;
+}
+// then get Teacher() to inherit the methods defined on Person()'s prototype
+Teacher.prototype = Object.create(Person.prototype);
+// 所谓继承，指prototypes之间相互继承?
+```
+
+* ES6 classes
+```
+class Teacher extends Person {
+  constructor(first, last, age, subject, grade) {
+    super(first, last, age);
+
+    // subject and grade are specific to Teacher
+    this.subject = subject;
+    this.grade = grade;
+  }
+}
+```
+
+* Getters and Setters
+```
+class Teacher extends Person {
+  constructor(first, last, age, gender, interests, subject, grade) {
+    super(first, last, age, gender, interests);
+    // subject and grade are specific to Teacher
+    this._subject = subject;
+    this.grade = grade;
+  }
+
+  get subject() {
+    return this._subject;
+  }
+
+  set subject(newSubject) {
+    this._subject = newSubject;
+  }
+}
+// use getter method:  snape.subject 
+// use setter method:  snape.subject="new value"
+```
