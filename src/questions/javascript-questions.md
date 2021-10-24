@@ -36,8 +36,37 @@ permalink: /questions/javascript-questions/index.html
   * What are the pros and cons of immutability?
   * How can you achieve immutability in your own code?
 * Explain the difference between synchronous and asynchronous functions.
-* What is event loop?
-  * What is the difference between call stack and task queue?
+* What is event loop? 
+    - js is always single thread. main thread.
+    - 每一句js 都是 一个task. sync and async tasks. sync 主线程执行. async进入Event Table
+    - macrotasks (whole script, setTimeout, UI, I/O) and microtasks(promise) 代码块(不是每句）
+    - https://zhuanlan.zhihu.com/p/79371232 例子
+    - 例子补充
+```
+setTimeout(function() {
+  console.log('1');
+}, 1000)
+
+new Promise(function(resolve) {
+  setTimeout(function() {
+    console.log('2');
+  }, 0)
+  resolve()
+}).then(function() {
+  console.log('3');
+})
+
+console.log('4');
+// 4 3 2 1   注意不是 1 2
+// setTimeout is async tasks, when hit setTimeout, put it into Event Table(Web/OS API 第三方？) to execute, only after it finished(0s vs 1s) in event table, can register callbacks in  macro/micro task queue.
+```
+![event loop](https://user-images.githubusercontent.com/35388473/138615441-75be0884-0fb9-49c2-810d-234cb20a6860.jpg)
+
+* What is the difference between call stack and task queue?
+    - call stack - keep track of fn calls, When ever we **call** a function for its execution, we are **pushing** it to the stack. It is **popped** out of the stack when the **execution is completed**. This is how Synchronous code is executed in JavaScript.
+    - task queue - micro/macro tasks queue
+![call stack](https://user-images.githubusercontent.com/35388473/138616385-d70ee388-b977-4e0b-bacc-7c9174d84f5c.gif)
+
 * What are the differences between variables created using `let`, `var` or `const`?
 * What are the differences between ES6 class and ES5 function constructors?
 * Can you offer a use case for the new arrow `=>` function syntax? How does this new syntax differ from other functions?
