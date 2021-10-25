@@ -48,9 +48,9 @@ console.log(o.f()); // 37
     - `=>` bind, or apply NOT WORKING. use parent context.
 * Explain how prototypal inheritance works.
 * var let and const
-      - var: global scope(window) , updated and re-declared, hoisted as undefined
-      - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
-      - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
+    - var: global scope(window) , updated and re-declared, hoisted as undefined
+    - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
+    - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
