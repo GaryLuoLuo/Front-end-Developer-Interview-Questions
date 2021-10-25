@@ -23,9 +23,18 @@ permalink: /questions/javascript-questions/index.html
     });
 </script>
 ```
+* `"use strict"` 更严格 https://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html
 * Explain how `this` works in JavaScript.
-  * Can you give an example of one of the ways that working with `this` has changed in ES6?
+    - A property of an **execution context** (global, function or eval) that, in non–strict mode, is always a reference to an object and in strict mode can be any value.
+    - global context, (outside of any function), `this === window === globalThis`
+    - Function context. Non strict, if not set by the call, is window.  In strict, if no call() or apply(), is undefined.
+    - Class context. just the object. `new Person()` this in person becomes Person. `Person()` without new, this in person becomes window. 
+* Can you give an example of one of the ways that working with `this` has changed in ES6?
 * Explain how prototypal inheritance works.
+* var let and const
+      - var: global scope(window) , updated and re-declared, hoisted as undefined
+      - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
+      - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
