@@ -29,7 +29,23 @@ permalink: /questions/javascript-questions/index.html
     - global context, (outside of any function), `this === window === globalThis`
     - Function context. Non strict, if not set by the call, is window.  In strict, if no call() or apply(), is undefined.
     - Class context. just the object. `new Person()` this in person becomes Person. `Person()` without new, this in person becomes window. 
+    - When a function is called as a method of an object, its this is set to the object the method is called on.
+    - DOM its this is set to the DOM element on which the listener is placed
+```
+var o = {
+  prop: 37,
+  f: function() {
+  // this bound to f context. If no context when f(), this is global (non strict)
+    return this.prop;
+  }
+};
+// because o calls f, 'this' in 'f' bounds to 'o' now
+console.log(o.f()); // 37
+
+```
 * Can you give an example of one of the ways that working with `this` has changed in ES6?
+    - `bind(X)` creates a new fn, same body, but this bound to args X.
+    - `=>` bind, or apply NOT WORKING. use parent context.
 * Explain how prototypal inheritance works.
 * var let and const
       - var: global scope(window) , updated and re-declared, hoisted as undefined
