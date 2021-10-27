@@ -80,7 +80,7 @@ console.log(o.f()); // 37
   * How can you achieve immutability in your own code?
 * Explain the difference between synchronous and asynchronous functions.
 * What is event loop? 
-    - js is always single thread. main thread.
+    - js is always single thread. main thread in renderer process.
     - 每一句js 都是 一个task. sync and async tasks. sync 主线程执行. async进入Event Table
     - macrotasks (whole script, setTimeout, UI, I/O) and microtasks(promise) 代码块(不是每句）
     - https://zhuanlan.zhihu.com/p/79371232 例子
@@ -104,6 +104,8 @@ console.log('4');
 // setTimeout is async tasks, when hit setTimeout, put it into Event Table(Web/OS API 第三方？) to execute, only after it finished(0s vs 1s) in event table, can register callbacks in  macro/micro task queue.
 ```
 ![event loop](https://user-images.githubusercontent.com/35388473/138615441-75be0884-0fb9-49c2-810d-234cb20a6860.jpg)
+![renderer process](https://user-images.githubusercontent.com/35388473/139111755-cdae6f25-0670-46e8-a50d-47d935ea17ae.jpg)
+
 
 * What is the difference between call stack and task queue?
     - call stack - keep track of fn calls, When ever we **call** a function for its execution, we are **pushing** it to the stack. It is **popped** out of the stack when the **execution is completed**. This is how Synchronous code is executed in JavaScript.
