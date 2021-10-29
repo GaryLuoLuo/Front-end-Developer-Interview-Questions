@@ -85,6 +85,11 @@ myFunc();
 * Explain `Function.prototype.bind`.
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain "hoisting".
+    - declaratation: var(let/const) and function. If no var, no hoisting
+    - splitting **variable** and **function**  variable declaration and initialization, and moving (just) the declarations to the top of the code
+    - var initialized with undefined. let and const are not initialized, if called, reference error
+    - `function catName(name) {}`
+    - `var num;`
 * Describe event bubbling.
 * Describe event capturing.
 * What's the difference between an "attribute" and a "property"?
