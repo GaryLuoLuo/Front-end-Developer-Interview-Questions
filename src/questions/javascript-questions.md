@@ -51,13 +51,34 @@ console.log(o.f()); // 37
     - var: global scope(window) , updated and re-declared, hoisted as undefined
     - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
     - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
-* What's the difference between a variable that is: `null`, `undefined` or undeclared?
-  * How would you go about checking for any of these states?
+* What's the difference between a variable that is: `null`, `undefined` or undeclared? How would you go about checking for any of these states?
+    - undeclared variables is a variable that has been declared without ‘var’. undeclared variables are created as global variable
+    - undefined means a variable has not been declared, or has been declared but has not yet been assigned a value
+    - null is an assignment value that means "no value". null is a value of a variable and is a type of object.
 * What is a closure, and how/why would you use one?
+    - a closure gives you access to an outer function’s scope from an inner function.
+    - A closure is the **combination of a function and the lexical environment** within which that function was declared. let you associate data (the lexical environment) with a function that operates on that data.
+```
+function makeFunc() {
+  var name = 'Mozilla';
+  function displayName() {
+    alert(name);
+  }
+  return displayName;
+}
+// The closure is created when displayName fn is declared. The instance of displayName maintains a reference to its lexical environment, within which the variable name exists. For this reason, when myFunc is invoked, the variable name remains available for use
+var myFunc = makeFunc();
+myFunc();
+```
 * What language constructions do you use for iterating over object properties and array items?
 * Can you describe the main difference between the `Array.forEach()` loop and `Array.map()` methods and why you would pick one versus the other?
+    - forEach: NOT return, return get ignored, just iterate over an array.
+    - map: returns a new array.
 * What's a typical use case for anonymous functions?
 * What's the difference between host objects and native objects?
+    - object supplied by the host environment (browser or node), window, document
+    - native defined by the ECMAScript specification, String, Math.
+    - User obj
 * Explain the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
 * Can you explain what `Function.call` and `Function.apply` do? What's the notable difference between the two?
