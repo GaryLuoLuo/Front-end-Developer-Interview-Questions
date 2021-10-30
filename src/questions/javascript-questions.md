@@ -28,7 +28,6 @@ permalink: /questions/javascript-questions/index.html
     });
 </script>
 ```
-* `"use strict"` 更严格 https://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html
 * Explain how `this` works in JavaScript.
     - A property of an **execution context** (global, function or eval) that, in non–strict mode, is always a reference to an object and in strict mode can be any value.
     - global context, (outside of any function), `this === window === globalThis`
@@ -117,17 +116,33 @@ if ("geolocation" in navigator) {
     - `theInput.value // returns "John"` - current value of the input.
     - `theInput.getAttribute('value') // returns "Name:"` - value attribute contains the initial text-content of the value attribute from the HTML source code.
 * What are the pros and cons of extending built-in JavaScript objects?
+    - Extending a built-in/native JavaScript object means adding properties/functions to its prototype
+    - Dangerous, might collide if two lib both extends.
+    - Only do for polyfill (browser compatibility)
 * What is the difference between `==` and `===`?
+    - `==` is the abstract equality operator while `===` is the strict equality operator.
+    - whether do type conversions
 * Explain the same-origin policy with regards to JavaScript.
-* Why is it called a Ternary operator, what does the word "Ternary" indicate?
+    - prevents JavaScript from making requests across domain boundaries
+    - CORS header
+* Why is it called a Ternary operator, what does the word "Ternary" indicate? - condition ? exprIfTrue : exprIfFalse
 * What is strict mode? What are some of the advantages/disadvantages of using it?
-* What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
-* What tools and techniques do you use debugging JavaScript code?
+    - `"use strict"` 更严格 https://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html
+    - prevent accidentally create global variables. 
+    - Makes assignments which would otherwise silently fail to throw an exception.
+    - this is undefined in the global context.
+    - BAD: No more access to arguments.callee
+* What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript? TypeScript
+* What tools and techniques do you use debugging JavaScript code? 
+    - React/Redux DevTools, Chrome Devtools, console.log
+    - **技巧！** https://raygun.com/blog/javascript-debugging/
 * Explain the difference between mutable and immutable objects.
-  * What is an example of an immutable object in JavaScript?
+  * What is an example of an immutable object in JavaScript? - String, Number
   * What are the pros and cons of immutability?
-  * How can you achieve immutability in your own code?
+  * How can you achieve immutability in your own code? - list/map: immer/immutable.js, array/object: `[...]`
 * Explain the difference between synchronous and asynchronous functions.
+    -  In synchronous functions, statements complete before the next statement is run. the program is evaluated exactly in order of the statements and execution of the program is paused if one of the statements take a very long time.
+    -  Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty. Heavy duty operations such as loading data from a web server or querying a database should be done asynchronously so that the main thread is not blocked (UI freeze)
 * What is event loop? 
     - js is always single thread. main thread in renderer process.
     - 每一句js 都是 一个task. sync and async tasks. sync 主线程执行. async进入Event Table
