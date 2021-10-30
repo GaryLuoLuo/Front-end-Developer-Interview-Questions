@@ -4,9 +4,14 @@ layout: layouts/page.njk
 permalink: /questions/javascript-questions/index.html
 ---
 
-* Explain event delegation.
+* Explain event delegation. 
+* Describe event bubbling.
+* Describe event capturing.
     - https://dmitripavlutin.com/javascript-event-delegation/
     - Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+    - DOM events are dispatched from the document to the target element (the capturing phase), and then bubble from the target element back to the document (the bubbling phase). 
+    - A click event propagates in 3 phases: Capture phase, Target p, Bubble phase. `event.target`, `event.currentTarget`
+    - https://codesandbox.io/s/event-propagation-example-71yvl?file=/src/index.js:6-15
 ```
 <div id="buttons"> <!-- Step 1 -->
   <button class="buttonClass">Click me</button>
@@ -81,17 +86,30 @@ myFunc();
     - User obj
 * Explain the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
-* Can you explain what `Function.call` and `Function.apply` do? What's the notable difference between the two?
+    - The former is a function declaration while the latter is a function expression. 
+    - The key difference is that **function declarations** have its body hoisted but the bodies of function expressions are not
+* Can you explain what `Function.call` and `Function.apply` do? What's the notable difference between the two? - apply takes array of args
 * Explain `Function.prototype.bind`.
 * What's the difference between feature detection, feature inference, and using the UA string?
+    - a Cross browser testing, run a test to determine whether a feature is supported in the current browser
+    - Modernizr is a great library to handle feature detection. 
+    - navigator.userAgent
+```
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    // show the location on a map, perhaps using the Google Maps API
+  });
+} else {
+  // Give the user a choice of static maps instead perhaps
+}
+```
 * Explain "hoisting".
     - declaratation: var(let/const) and function. If no var, no hoisting
     - splitting **variable** and **function**  variable declaration and initialization, and moving (just) the declarations to the top of the code
     - var initialized with undefined. let and const are not initialized, if called, reference error
     - `function catName(name) {}`
     - `var num;`
-* Describe event bubbling.
-* Describe event capturing.
+
 * What's the difference between an "attribute" and a "property"?
 * What are the pros and cons of extending built-in JavaScript objects?
 * What is the difference between `==` and `===`?
