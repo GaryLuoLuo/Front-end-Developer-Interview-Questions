@@ -111,6 +111,11 @@ if ("geolocation" in navigator) {
     - `var num;`
 
 * What's the difference between an "attribute" and a "property"?
+    - When writing HTML source code, you can define attributes on your HTML elements. Then, once the browser parses your code, a corresponding DOM node will be created. This node is an object, and therefore it has properties.
+    - `<input type="text" value="Name:">` has 2 attributes (type and value).
+    - Once the browser parses this code, a HTMLInputElement object will be created, DOM node will have id,type, and value properties.
+    - `theInput.value // returns "John"` - current value of the input.
+    - `theInput.getAttribute('value') // returns "Name:"` - value attribute contains the initial text-content of the value attribute from the HTML source code.
 * What are the pros and cons of extending built-in JavaScript objects?
 * What is the difference between `==` and `===`?
 * Explain the same-origin policy with regards to JavaScript.
