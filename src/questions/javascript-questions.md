@@ -178,11 +178,55 @@ console.log('4');
 
 * What are the differences between variables created using `let`, `var` or `const`?
 * What are the differences between ES6 class and ES5 function constructors?
+    - for creating new objects
+    - syntactic sugar class
 * Can you offer a use case for the new arrow `=>` function syntax? How does this new syntax differ from other functions?
-* What advantage is there for using the arrow syntax for a method in a constructor?
+    - https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/
+    - this value inside a regular function is dynamic and depends on the invocation. But this inside the arrow function is bound lexically and equals to this of the outer function.
+    - arguments => ...rest
+    - => implicitly return
+    - => define methods inside class, always bind this to class instance
+    - bind call apply no effect on =>, as => always bind to it's lexical scope
+```
+// define class => this always bind to Hero
+class Hero {
+  constructor(x) {
+    this.x = x;
+  }
+  logName = () => {
+    console.log(this.x);
+  }
+}
+// regular fn => this is dynamic and can be detached from obj as callback
+class Hero {
+  constructor(x) {
+    this.x = x;
+  }
+  logName() {  //  or logName = function() {
+    console.log(this.x);
+  }
+}
+const batman = new Hero('Batman');
+setTimeout(batman.logName, 1000) // undefined
+```
+* What advantage is there for using the arrow syntax for a method in a constructor? - bind this to it's lexical scope
 * What is the definition of a higher-order function?
+    - A Higher-Order function is a function that receives a function as an argument or returns the function as output. 
+    - For example, Array.prototype.map, Array.prototype.filter and Array.prototype.reduce are some of the Higher-Order functions built into the language.
+```
+// custom HOF, map
+function mapForEach(arr, fn) {
+  const newArray = [];
+  for(let i = 0; i < arr.length; i++) {
+    newArray.push(
+      fn(arr[i])
+    );
+  }
+  return newArray;
+}
+```
 * Can you give an example for destructuring an object or an array?
-* Can you give an example of generating a string with ES6 Template Literals?
+* Can you give an example of generating a string with ES6 Template Literals? - note ES6 Tagged templates
 * Can you give an example of a curry function and why this syntax offers an advantage?
 * What are the benefits of using `spread syntax` and how is it different from `rest syntax`?
 * How can you share code between files?
