@@ -291,11 +291,12 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 * What will be returned by each of these?
+    - && operator is executed before the || operator
 ```javascript
-console.log("hello" || "world")
-console.log("foo" && "bar")
+console.log("hello" || "world") // 'hello'   hello is true, whole expression must be true, short circuit, return it
+console.log("foo" && "bar") // 'bar'  T&&F   foo is false, result must be false, return false. foo is true, see another one
 ```
-* Write an immediately invoked function expression (IIFE)
+* Write an immediately invoked function expression (IIFE) `(function() {})()`
 
 ---
 * 构造函数 constructor functions - 大写, e.g. Object String Array Person   
