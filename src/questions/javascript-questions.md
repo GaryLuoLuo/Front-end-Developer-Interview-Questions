@@ -62,6 +62,7 @@ console.log(o.f()); // 37
 * What is a closure, and how/why would you use one?
     - a closure gives you access to an outer function’s scope from an inner function.
     - A closure is the **combination of a function and the lexical environment** within which that function was declared. let you associate data (the lexical environment) with a function that operates on that data.
+    - Since a nested function is a closure, this means that **a nested function can "inherit" the arguments and variables of its containing function**. In other words, the inner function contains the scope of the outer function.
 ```
 function makeFunc() {
   var name = 'Mozilla';
@@ -249,6 +250,7 @@ function curryIt(fn) {
 // https://medium.com/@juliomatcom/an-elegant-and-simple-curry-f-implementation-in-javascript-cf36252cff4c
 function curry(f) {
   return function currify() {
+    // Since a nested function is a closure, this means that a nested function can "inherit" the arguments and variables of its containing function.
     const args = Array.prototype.slice.call(arguments);
     return args.length >= f.length ?
       f.apply(null, args) :
