@@ -227,12 +227,58 @@ function mapForEach(arr, fn) {
 ```
 * Can you give an example for destructuring an object or an array?
 * Can you give an example of generating a string with ES6 Template Literals? - note ES6 Tagged templates
-* Can you give an example of a curry function and why this syntax offers an advantage?
+* Can you give an example of a curry function and why this syntax offers an advantage? 
+    - curried function takes multiple arguments one at a time.
+    - https://zhuanlan.zhihu.com/p/80043365
+```
+// currify 1
+function curryIt(fn) {
+  // 参数fn函数的参数个数
+  var n = fn.length;
+  var args = [];
+  return function(arg) {
+    args.push(arg);
+    if (args.length < n) {
+      return arguments.callee; // 返回这个函数的引用
+    } else {
+      return fn.apply(this, args); // 调用函数
+    }
+  };
+}
+// currify 2
+// https://medium.com/@juliomatcom/an-elegant-and-simple-curry-f-implementation-in-javascript-cf36252cff4c
+function curry(f) {
+  return function currify() {
+    const args = Array.prototype.slice.call(arguments);
+    return args.length >= f.length ?
+      f.apply(null, args) :
+      currify.bind(null, ...args)
+  }
+}
+// currify 3 - you can import curry from well known libraries like lodash or ramda for both Node and the Browser.
+```
 * What are the benefits of using `spread syntax` and how is it different from `rest syntax`?
+    - if you want to **copy** values of iterables(Objects/Strings/Arrays), make use of spread.
+    -  If you want specific items to be **excluded from the copy**, make use of **destructuring** and the rest operator.
 * How can you share code between files?
+    - ES5 require/module.exports, ES6 import/export
 * Why you might want to create static class members?
+    -  Static methods are often utility functions, such as functions to create or clone objects, 
+    - static properties are useful for caches, fixed-configuration, or any other data you don't need to be replicated across instances.
+```
+class ClassWithStaticMethod {
+  static staticProperty = 'someValue';
+  static staticMethod() {
+    return 'static method has been called.';
+  }
+  static {  
+    console.log("Class static initialization block called");
+  }
+}
+```
 * What is the difference between `while` and `do-while` loops in JavaScript?
 * What is a promise? Where and how would you use promise?
+    - 遇到new Promise执行内部的创建函数, (遇到setTimeout，将回调丢到macrotask)，同时将then中的回调函数丢到microtask。在resolve之前，pending promise, 在resolve之后，fulfilled or rejected promise.
 
 ## Coding questions
 * Make this work:
