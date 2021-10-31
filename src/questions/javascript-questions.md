@@ -279,6 +279,10 @@ class ClassWithStaticMethod {
 * What is the difference between `while` and `do-while` loops in JavaScript?
 * What is a promise? Where and how would you use promise?
     - 遇到new Promise执行内部的创建函数, (遇到setTimeout，将回调丢到macrotask)，同时将then中的回调函数丢到microtask。在resolve之前，pending promise, 在resolve之后，fulfilled or rejected promise.
+* What is callback
+    - A callback function is a function passed into another function **as an argument** HOF?, which is then invoked inside the outer function to complete some kind of routine or action.
+    - callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure is used in many modern web APIs, such as fetch().
+
 
 ## Coding questions
 * Make this work:
