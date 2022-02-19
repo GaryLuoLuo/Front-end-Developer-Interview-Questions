@@ -196,3 +196,22 @@ Each media feature expression must be surrounded by parentheses.
     - float: left, right, none
     - position: static, relative, absolute, fixed, sticky
     - (Table layout, Multiple-column layout)
+* styled-components
+```
+import styled from 'styled-components';
+import styles from './style.less';
+
+const Wrapper = styled(div)`
+  border: 1px dashed ${props => props.color};
+  width: 100%;
+`;
+
+const Header = (props) => {
+  return (
+    <div>
+      <Wrapper color="#000">使用 styled-component </Wrapper>
+      <div className={styles.Wrapper}>使用 CSS Modules</div>
+    </div>
+  );
+};
+```
