@@ -123,6 +123,10 @@ if ("geolocation" in navigator) {
 * What is the difference between `==` and `===`?
     - `==` is the abstract equality operator while `===` is the strict equality operator.
     - whether do type conversions
+    - https://www.mattzeunert.com/2016/01/28/javascript-deep-equal.html
+    - [] == [] or [] === [] are false
+    - ==/===/ reference equality is always the first, and then compare the value
+    - shallow-equals/deep-equal not recursively or recursively check array or obj properties using === 
 * Explain the same-origin policy with regards to JavaScript.
     - prevents JavaScript from making requests across domain boundaries
     - CORS header
