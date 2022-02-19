@@ -196,7 +196,9 @@ Each media feature expression must be surrounded by parentheses.
     - float: left, right, none
     - position: static, relative, absolute, fixed, sticky
     - (Table layout, Multiple-column layout)
-* styled-components
+* styled-components - css in JS, moduler
+    - styled-components utilises tagged template literals to style your components.
+    - It removes the mapping between components and styles. 
 ```
 import styled from 'styled-components';
 import styles from './style.less';
