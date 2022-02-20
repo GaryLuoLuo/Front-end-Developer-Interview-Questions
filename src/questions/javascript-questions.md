@@ -52,7 +52,6 @@ console.log(o.f()); // 37
     - `=>` bind, or apply NOT WORKING. use parent context.
 * Explain how prototypal inheritance works.
 * var let and const
-    -  interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
     - var: global scope(window) , updated and re-declared, hoisted as undefined
     - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
     - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
@@ -105,9 +104,11 @@ if ("geolocation" in navigator) {
 }
 ```
 * Explain "hoisting".
-    - declaratation: var(let/const) and function. If no var, no hoisting
-    - splitting **variable** and **function**  variable declaration and initialization, and moving (just) the declarations to the top of the code
-    - var initialized with undefined. let and const are not initialized, if called, reference error
+    -  interpreter appears to move the **declaration** of functions, variables or classes to the top of their scope, prior to execution of the code.
+    -  JavaScript only hoists declarations, not initializations!!!
+    - functional hoisting lets us use a function before we declare it
+    - variable hoisting, Conceptually variable hoisting is often presented as the interpreter "splitting variable declaration and initialization, and moving (just) the declarations to the top of the code".
+    - var initialized with undefined. let and const are not initialized, if called, throw reference error
     - `function catName(name) {}`
     - `var num;`
 
