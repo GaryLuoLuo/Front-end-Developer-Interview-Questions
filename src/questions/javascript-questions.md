@@ -52,6 +52,7 @@ console.log(o.f()); // 37
     - `=>` bind, or apply NOT WORKING. use parent context.
 * Explain how prototypal inheritance works.
 * var let and const
+    -  interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
     - var: global scope(window) , updated and re-declared, hoisted as undefined
     - let: block scope({}) , updated but NOT re-declared, hoisted not initialized(reference error)
     - const: block scope({}), NOT updated or re-declared, hoisted not initialized(reference error), must be initialized during declaration.
