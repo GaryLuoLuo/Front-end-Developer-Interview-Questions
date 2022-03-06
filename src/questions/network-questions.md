@@ -14,7 +14,7 @@ permalink: /questions/network-questions/index.html
 ```
 Let us suppose that you type the URL www.quora.com
 
-Step 1 --> Get the ip address of the URL.
+Step 1 --> DNS Resolution, Get the ip address of the URL.
 
 To Get the IP address for http://www.quora.com, the steps are
 a) System checks the browser cache. Browser caches the DNS data for some time.
@@ -44,13 +44,21 @@ http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
     - https://medium.com/system-design-blog/long-polling-vs-websockets-vs-server-sent-events-c43ba96df7c1
 * Explain the following request and response headers:
   * Diff. between Expires, Date, Age and If-Modified-...
+      - Expires The Expires HTTP header contains the date/time after which the **response is considered expired**.
+      - Date: contains the date and time at which the message was originated.
+      - Age: contains the time in seconds the object was in a **proxy cache**.  If it is Age: 0, it was probably fetched from the origin server;
   * Do Not Track
-  * Cache-Control
-  * Transfer-Encoding
+  * Cache-Control - **instructions control** caching in browsers and shared caches (e.g. Proxies, CDNs).
+  * Transfer-Encoding - encoding to transfer the payload body
   * ETag
-  * X-Frame-Options
+     - entity tag
+     - identifier for a specific version of a resource
+     - If the resource at a given URL changes, a new Etag value must be generated
+     - web server does not need to resend a full response if the content was not changed
+  * X-Frame-Options - indicate whether or not a browser should be **allowed to render** a page in a <frame>, <iframe>, <embed> or <object>
 * What are HTTP methods? List all HTTP methods that you know, and explain them.
 * What is domain pre-fetching and how does it help with performance?
+    - attempt to **resolve** domain names **before** resources get **requested**.
 * What is a CDN and what is the benefit of using one?
     - https://www.cloudflare.com/learning/cdn/cdn-benefits/
     - **a group of servers** around the globe, speed up content delivery on the web
