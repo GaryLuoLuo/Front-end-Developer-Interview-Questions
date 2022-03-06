@@ -59,6 +59,18 @@ http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
   * X-Frame-Options - indicate whether or not a browser should be **allowed to render** a page in a <frame>, <iframe>, <embed> or <object>
 ```
 * What are HTTP methods? List all HTTP methods that you know, and explain them.
+    - GET: request resources, retrieve data
+    - HEAD: == GET, but without response body
+    - POST: submits an entity to the resource, causing changes in the server
+    - PUT: replace all resource with the request payload
+    - DELETE: deletes specified resource
+    - CONNECT: establishe a tunnel to the server
+    - OPTIONS: describe the communication options
+          1. identifying allowed request methods. `curl -X OPTIONS https://example.com` `Allow: OPTIONS, GET, HEAD, POST`
+          2. preflighted requests in CORS. In CORS, a preflight request is sent with the OPTIONS method so that the server can respond if it is acceptable to send the request. `Access-Control-Request-Method` `Access-Control-Allow-Methods`
+          - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS
+    - TRACE:
+    - PATCH: partial modifications to a resource
 * What is domain pre-fetching and how does it help with performance?
     - attempt to **resolve** domain names **before** resources get **requested**.
 * What is a CDN and what is the benefit of using one?
