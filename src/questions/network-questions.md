@@ -52,3 +52,7 @@ http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
 * What are HTTP methods? List all HTTP methods that you know, and explain them.
 * What is domain pre-fetching and how does it help with performance?
 * What is a CDN and what is the benefit of using one?
+    - https://www.cloudflare.com/learning/cdn/cdn-benefits/
+    - **a group of servers** around the globe, speed up content delivery on the web
+    - The servers in a CDN temporarily **store webpage content** like images, HTML, JavaScript, and video. 
+    - four important benefits: better performance(reduction in load time), increased reliability(failover to backup server), cost savings(reduction in server bandwidth costs), and resilience against cyber attacks(DoS and DDoS attack).
