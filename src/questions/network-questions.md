@@ -43,6 +43,7 @@ http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
     - Server Sent Events: Server-Sent Events are a **one-way** communication channel where events flow **from server to client only**
     - https://medium.com/system-design-blog/long-polling-vs-websockets-vs-server-sent-events-c43ba96df7c1
 * Explain the following request and response headers:
+```
   * Diff. between Expires, Date, Age and If-Modified-...
       - Expires The Expires HTTP header contains the date/time after which the **response is considered expired**.
       - Date: contains the date and time at which the message was originated.
@@ -56,6 +57,7 @@ http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
      - If the resource at a given URL changes, a new Etag value must be generated
      - web server does not need to resend a full response if the content was not changed
   * X-Frame-Options - indicate whether or not a browser should be **allowed to render** a page in a <frame>, <iframe>, <embed> or <object>
+```
 * What are HTTP methods? List all HTTP methods that you know, and explain them.
 * What is domain pre-fetching and how does it help with performance?
     - attempt to **resolve** domain names **before** resources get **requested**.
