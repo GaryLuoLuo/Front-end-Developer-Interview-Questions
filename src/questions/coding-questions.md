@@ -107,7 +107,10 @@ Question: What will the code below output to the console and why?
 console.log("a defined? " + (typeof a !== 'undefined'));
 console.log("b defined? " + (typeof b !== 'undefined'));
 ```
-`window.b=3; var a=3`
+But in fact, var a = b = 3; is actually shorthand for:  
+b = 3;  
+var a = b;  
+`window.b=3; var a=3`. 
 
 Question: Consider the two functions below. Will they both return the same thing? Why or why not?
 ```javascript
