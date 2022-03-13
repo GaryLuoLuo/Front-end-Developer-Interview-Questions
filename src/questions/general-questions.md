@@ -31,7 +31,10 @@ permalink: /questions/general-questions/index.html
 * Explain what ARIA and screenreaders are, and how to make a website accessible.
 * Explain some of the pros and cons for CSS animations versus JavaScript animations.
 * What does CORS stand for and what issue does it address?
-    - ??
+    - Cross Origin Resource Sharing. HTTP-header based mechanism
+    - same-origin policy, This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page. browsers restrict cross-origin HTTP requests initiated from scripts
+    - This can be pretty limiting… so for instance say you want to send and receive data to and from multiple servers and make say a single page application, this is where CORS comes in.
+    - CORS allows resource sharing from across a different origin, or cross-domain requests.
 * How did you handle a disagreement with your boss or your collaborator?
 * What resources do you use to learn about the latest in front end development and design?
 * What skills are needed to be a good front-end developer?
