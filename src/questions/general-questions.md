@@ -15,14 +15,26 @@ permalink: /questions/general-questions/index.html
 * Talk about your preferred development environment.
 * Which version control systems are you familiar with?
 * Can you describe your workflow when you create a web page?
-    - ??
+    - Planning: purpose and goal of the project?
+    - Wire frame: Sketching down the overall design on a paper
+    - Design: Then I’ll move onto Photoshop/figma and design the web page 
+    - Code: get the design into coded web format.
+    - Test & debug: If it is a responsive web page, one has to make sure that it works perfectly and all the elements were placed perfectly across all devices and browsers.
+    - Launch!!!
 * If you have 5 different stylesheets, how would you best integrate them into the site?
 * Can you describe the difference between progressive enhancement and graceful degradation?
 * How would you optimize a website's assets/resources?
 * How many resources will a browser download from a given domain at a time?
   * What are the exceptions?
 * Name 3 ways to decrease page load (perceived or actual load time).
-    - ??
+    - Enable compression.
+    - Minify CSS, JavaScript, and HTML.
+    - Reduce redirects.
+    - Remove render-blocking JavaScript.
+    - Leverage browser caching.
+    - Improve server reaction time.
+    - Use a content distribution network.
+    - Optimize images.
 * If you jumped on a project and they used tabs and you used spaces, what would you do?
 * Describe how you would create a simple slideshow page.
 * If you could master one technology this year, what would it be?
