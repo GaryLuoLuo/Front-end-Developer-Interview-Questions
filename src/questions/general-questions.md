@@ -33,3 +33,6 @@ permalink: /questions/general-questions/index.html
 * What skills are needed to be a good front-end developer?
 * What role do you see yourself?
 * Explain the difference between cookies, session storage, and local storage?
+*  Traditional Web Apps and Single Page Apps (SPAs)
+    - There are two general approaches to building web applications today: traditional web applications that perform most of the application logic on the server
+    - single-page applications (SPAs) that perform most of the user interface logic in a web browser, communicating with the web server primarily using web APIs.
