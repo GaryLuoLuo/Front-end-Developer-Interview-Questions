@@ -8,7 +8,8 @@ permalink: /questions/javascript-questions/index.html
 * Describe event bubbling.
 * Describe event capturing.
     - https://dmitripavlutin.com/javascript-event-delegation/
-    - Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.
+    - https://bigfrontend.dev/question/What-is-Event-Delegation/discuss
+    - Instead of adding an event listener to each and every similar element, we can add an event listener to a **parent element** and call an event on a particular target using the **.target** property of the event object.
     - DOM events are dispatched from the document to the target element (the capturing phase), and then bubble from the target element back to the document (the bubbling phase). 
     - A click event propagates in 3 phases: Capture phase, Target p, Bubble phase. `event.target`, `event.currentTarget`
     - https://codesandbox.io/s/event-propagation-example-71yvl?file=/src/index.js:6-15
