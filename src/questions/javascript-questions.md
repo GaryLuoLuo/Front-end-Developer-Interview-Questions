@@ -264,6 +264,22 @@ function curry(f) {
       currify.bind(null, ...args)
   }
 }
+// or
+function curry(fn) {
+  // your code here
+  // args = previous binded args + new args just passed in
+  return function currify (...args) {
+    // let args = Array.prototype.slice.call(arguments)
+    if (args.length < fn.length) {
+      // or arguments.callee.bind()
+      return currify.bind(null, ...args); 
+      // If no arguments are provided to bind , or if the thisArg is null or undefined, the this of the executing scope is treated as the thisArg for the new function.
+      // creates a new bound function, every bind is new!
+    } else {
+      return fn.apply(null, args);
+    }
+  }
+}
 // currify 3 - you can import curry from well known libraries like lodash or ramda for both Node and the Browser.
 ```
 * What are the benefits of using `spread syntax` and how is it different from `rest syntax`?
